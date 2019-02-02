@@ -20,6 +20,9 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: install mocha
+          command: npm i -g mocha
+      - run:
           name: test
           command: npm test
       - run:
