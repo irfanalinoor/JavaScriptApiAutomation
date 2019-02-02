@@ -1,0 +1,11 @@
+{
+  "BaseURL" : "https://api.weatherbit.io/v2.0/",
+  "ApiKey"  : "be51eb27eab14121aad170687ef85ff1",
+  "Current" : {
+    "Lat" : 40.730610,
+    "Lon" : -73.935242
+  },
+  "Forecast3Hourly" : {
+    "Postal_Code" : 28555
+  }
+}
