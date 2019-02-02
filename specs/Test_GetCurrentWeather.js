@@ -12,6 +12,8 @@ this.timeout(30000);
         it('Verify \'Current Weather By GPS Coordinates\' Api response is OK', async function() {
 
             testData = data.BaseURL+'current/?lat=0&lon=0&key='+data.ApiKey;
+
+            console.log("Running Test for Current Weather By GPS Coordinates "+testData);
             
             currentResponse = await Get_CurrentByGPSCoordinates(testData);
 
@@ -31,6 +33,8 @@ this.timeout(30000);
         it('Verify STATE CODE is displayed in response of \'Current Weather By GPS Coordinates\' Api' , async function() {
 
             testData = data.BaseURL+'current/?lat='+data.Current.Lat+'&lon='+data.Current.Lon+'&key='+data.ApiKey;
+
+            console.log("Running Test for Current Weather By GPS Coordinates "+testData);
             
             currentResponse = await Get_CurrentByGPSCoordinates(testData);
 

@@ -13,6 +13,8 @@ this.timeout(30000);
 
             
             testData = data.BaseURL+'forecast/3hourly?postal_code=28546&key='+data.ApiKey;
+
+            console.log("Running Test for Forecast by Postal Code"+testData);
             
             forecastResponse = await Get_ForecastByPostalCode(testData);
 
@@ -33,6 +35,8 @@ this.timeout(30000);
 
             testData = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly.Postal_Code+'&key='+data.ApiKey;
             
+            console.log("Running Test for Forecast by Postal Code"+testData);
+
             forecastResponse = await Get_ForecastByPostalCode(testData);
 
             expect(forecastResponse.statusCode).to.equal(200);
@@ -55,6 +59,8 @@ this.timeout(30000);
         it('Verify response of \'Forecast Weather By Postal Code\' Api have value of WEATHER' , async function() {
 
             testData = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly.Postal_Code+'&key='+data.ApiKey;
+
+            console.log("Running Test for "+testData);
             
             forecastResponse = await Get_ForecastByPostalCode(testData);
 
