@@ -38,3 +38,6 @@
     Functional Tests
       √ Verify response of 'Forecast Weather By Postal Code' Api have value of TIMESTAMP UTC (1286ms)
       √ Verify response of 'Forecast Weather By Postal Code' Api have value of WEATHER (2055ms)
+
+## CI/CD Run
+- Change [InputData](https://github.com/irfanalinoor/JavaScriptApiAutomation/blob/master/resource/datafile/InputData.json) to run tests on CircleCI
