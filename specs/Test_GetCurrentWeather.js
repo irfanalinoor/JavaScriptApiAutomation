@@ -1,6 +1,6 @@
 
-var expect = require("chai").expect;
-var {Get_CurrentByGPSCoordinates} = require("../apiModules/Weather/Get_CurrentByGPSCoordinates");
+const expect = require("chai").expect;
+const {Get_CurrentByGPSCoordinates} = require("../apiModules/Weather/Get_CurrentByGPSCoordinates");
 const data = require('../resource/datafile/InputData.json');
 
 

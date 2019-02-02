@@ -8,25 +8,21 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm
+          name: Update-npm
           command: 'sudo npm install -g npm@5'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: install-npm-wee
+          name: Install-npm-wee
           command: 'sudo npm install'
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
       - run:
-          name: install-mocha
+          name: Install-Mocha
           command: 'sudo npm i -g mocha'
       - run:
-          name: test
+          name: Run-Tests
           command: 'npm test'
       - run:
-          name: code-coverage
+          name: Code-Coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
       - store_artifacts:
           path: test-results.xml
