@@ -1,6 +1,5 @@
 # JavaScript Api Automation Project
 
-
 ## Overview
 * This is a simple project to showcase Api Test Automation in JavaScript.
 * Project uses free [Weather API](https://www.weatherbit.io/api/swaggerui/weather-api-v2#/)
@@ -12,7 +11,6 @@
 * **Assertion Lib:** Chai, Expect, Should
 * **CI/CD:** CircleCI
 
-----
 ## Setup
 - Download [JavaScriptApiAutomation](https://github.com/irfanalinoor/JavaScriptApiAutomation) project repo from GitHub
 - Install latest [Node.JS](https://nodejs.org/en/download/)
@@ -23,7 +21,6 @@
 - Run `npm install -g mocha`
 - Run Tests `npm test`
 
-----
 ## Test Scenarios
 
     Current Weather Data API - Test Suite
