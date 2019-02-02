@@ -10,7 +10,7 @@
 * **Build/Dependency Management:** Mocha/npm
 * **API Testing Frameworks:** REST Api, NodeJS, Request
 * **Assertion Lib:** Chai, Expect, Should
-* **CI/CD:** CircleCI (To Be Added)
+* **CI/CD:** CircleCI
 
 ----
 ## Setup
