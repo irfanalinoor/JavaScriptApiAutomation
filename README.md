@@ -1,4 +1,4 @@
-#JavaScript Api Automation Project
+# JavaScript Api Automation Project
 
 
 ## Overview
