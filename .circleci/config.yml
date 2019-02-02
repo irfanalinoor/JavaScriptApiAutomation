@@ -33,7 +33,7 @@ jobs:
           paths:
             - ./node_modules
       - run: # run tests
-          name: test
+          name: excute test
           command: npm test
       # Download and cache dependencies
       - restore_cache:
