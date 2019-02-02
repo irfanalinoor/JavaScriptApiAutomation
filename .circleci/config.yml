@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/JavaScriptApiAutomation
     docker:
-      - image: node:8.0
+      - image: circleci/node:8.0
       - image: mongo:3.4.4
     steps:
       - checkout
