@@ -14,17 +14,17 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm-wee
-          command: npm install
+          command: 'sudo npm install'
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run:
-          name: install mocha
-          command: npm i -g mocha
+          name: install-mocha
+          command: 'sudo npm i -g mocha'
       - run:
           name: test
-          command: npm test
+          command: 'npm test'
       - run:
           name: code-coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
