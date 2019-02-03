@@ -1,14 +1,14 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "suites": 7,
+    "tests": 6,
+    "passes": 6,
     "pending": 0,
     "failures": 0,
-    "start": "2019-02-03T10:11:29.090Z",
-    "end": "2019-02-03T10:12:02.352Z",
-    "duration": 33262,
-    "testsRegistered": 1,
+    "start": "2019-02-03T10:16:19.923Z",
+    "end": "2019-02-03T10:16:58.308Z",
+    "duration": 38385,
+    "testsRegistered": 6,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "fa230c8a-68fe-45e6-8d88-21b2453345d4",
+    "uuid": "43ab8442-55c7-42e9-a1b0-5d4f277aac45",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,7 +28,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "d7dd65b8-6d78-4846-9b1c-fd00703a350f",
+        "uuid": "cb9e9c6a-9777-4c4b-9a49-2dacbf466eb3",
         "title": "Performance Test Suite",
         "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\JavaScriptApiAutomation\\specs\\PerformanceTest.js",
         "file": "\\specs\\PerformanceTest.js",
@@ -39,7 +39,7 @@
             "title": "Verify Response=OK when both APIs are called 10times",
             "fullTitle": "Performance Test Suite Verify Response=OK when both APIs are called 10times",
             "timedOut": false,
-            "duration": 33246,
+            "duration": 28436,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -48,22 +48,230 @@
             "code": "console.log(\"Expected Response Time per Api Request Call = \"+expectedApiResponseTime);\n      \nfor(var i = 0; i < 10; i++) {\n  console.log(\"Calling APIs in \"+i+\" iteration\")\n  \n  testData1 = data.BaseURL+'current/?lat='+data.Current[i].Lat+'&lon='+data.Current[i].Lon+'&key='+data.ApiKey;\n  testData2 = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly[i].Postal_Code+'&key='+data.ApiKey;\n  currentResponse = await Get_CurrentByGPSCoordinates(testData1);\n  forecastResponse = await Get_ForecastByPostalCode(testData2);\n  expect(currentResponse.statusCode).to.equal(200);  \n  expect(currentResponse.elapsedTime).to.lessThan(expectedApiResponseTime);\n  \n  expect(forecastResponse.statusCode).to.equal(200);\n  expect(forecastResponse.elapsedTime).to.lessThan(expectedApiResponseTime);\n  console.log(\">>> Response Code of \\'Current Weather By GPS Coordinates\\' Api = \"+currentResponse.statusCode);\n  console.log(\">>> Response Time of \\'Current Weather By GPS Coordinates\\' Api = \"+currentResponse.elapsedTime);\n  console.log(\">>> Response Time of \\'Forecast Weather By Postal Code\\' Api = \"+forecastResponse.statusCode);\n  console.log(\">>> Response Time of \\'Forecast Weather By Postal Code\\' Api = \"+forecastResponse.elapsedTime);\n}",
             "err": {},
             "isRoot": false,
-            "uuid": "170cc27d-c010-494b-85a3-f01dbbc5424b",
+            "uuid": "abdd7778-b6b4-4df0-9f46-5cc82d4e592c",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "170cc27d-c010-494b-85a3-f01dbbc5424b"
+          "abdd7778-b6b4-4df0-9f46-5cc82d4e592c"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 33246,
+        "duration": 28436,
         "root": false,
         "rootEmpty": false,
         "_timeout": 500000
+      },
+      {
+        "uuid": "01396f9d-9997-4cd7-9c33-2a1718021013",
+        "title": "Current Weather Data API - Test Suite",
+        "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\JavaScriptApiAutomation\\specs\\Test_GetCurrentWeather.js",
+        "file": "\\specs\\Test_GetCurrentWeather.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "fb482f57-7dc0-4a3b-accc-68c918b3809b",
+            "title": "Basic Shakedown Tests",
+            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\JavaScriptApiAutomation\\specs\\Test_GetCurrentWeather.js",
+            "file": "\\specs\\Test_GetCurrentWeather.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "Verify 'Current Weather By GPS Coordinates' Api response is OK",
+                "fullTitle": "Current Weather Data API - Test Suite Basic Shakedown Tests Verify 'Current Weather By GPS Coordinates' Api response is OK",
+                "timedOut": false,
+                "duration": 1490,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "testData = data.BaseURL+'current/?lat=0&lon=0&key='+data.ApiKey;\nconsole.log(\"Running Test for Current Weather By GPS Coordinates \"+testData);\n\ncurrentResponse = await Get_CurrentByGPSCoordinates(testData);\nexpect(currentResponse.statusCode).to.equal(200);\n\ncurrentResponseBody = JSON.parse(currentResponse.body);\n     \nexpect(currentResponseBody.data).to.be.an('array');",
+                "err": {},
+                "isRoot": false,
+                "uuid": "0cea1daf-3d2b-4009-8de7-6927d2e8f20b",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "0cea1daf-3d2b-4009-8de7-6927d2e8f20b"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 1490,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 30000
+          },
+          {
+            "uuid": "93c5a33e-a552-46b9-a20f-ebce5d0bcee4",
+            "title": "Functional Tests",
+            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\JavaScriptApiAutomation\\specs\\Test_GetCurrentWeather.js",
+            "file": "\\specs\\Test_GetCurrentWeather.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "Verify STATE CODE is displayed in response of 'Current Weather By GPS Coordinates' Api",
+                "fullTitle": "Current Weather Data API - Test Suite Functional Tests Verify STATE CODE is displayed in response of 'Current Weather By GPS Coordinates' Api",
+                "timedOut": false,
+                "duration": 917,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "testData = data.BaseURL+'current/?lat='+data.Current[2].Lat+'&lon='+data.Current[2].Lon+'&key='+data.ApiKey;\nconsole.log(\"Running Test for Current Weather By GPS Coordinates \"+testData);\n\ncurrentResponse = await Get_CurrentByGPSCoordinates(testData);\nexpect(currentResponse.statusCode).to.equal(200);\n\ncurrentResponseBody = JSON.parse(currentResponse.body);\n\nexpect(currentResponseBody.data[0]).to.include.any.keys( 'state_code');\n\nexpect(currentResponseBody.data[0].state_code).not.to.be.null;",
+                "err": {},
+                "isRoot": false,
+                "uuid": "44ab263c-d268-4e12-a8a6-030f9f4a1244",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "44ab263c-d268-4e12-a8a6-030f9f4a1244"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 917,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 30000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 30000
+      },
+      {
+        "uuid": "a3723184-6e59-4caf-bb47-5083165883f4",
+        "title": "Forecast Weather Data API - Test Suite",
+        "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\JavaScriptApiAutomation\\specs\\Test_GetForecastWeather.js",
+        "file": "\\specs\\Test_GetForecastWeather.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "73fa273a-0c6f-40bd-a9cd-45afc44bbab2",
+            "title": "Basic Shakedown Tests",
+            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\JavaScriptApiAutomation\\specs\\Test_GetForecastWeather.js",
+            "file": "\\specs\\Test_GetForecastWeather.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "Verify 'Forecast - 3 Hourly Data' Api response is OK",
+                "fullTitle": "Forecast Weather Data API - Test Suite Basic Shakedown Tests Verify 'Forecast - 3 Hourly Data' Api response is OK",
+                "timedOut": false,
+                "duration": 1530,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "testData = data.BaseURL+'forecast/3hourly?postal_code=28546&key='+data.ApiKey;\nconsole.log(\"Running Test for Forecast by Postal Code\"+testData);\n\nforecastResponse = await Get_ForecastByPostalCode(testData);\nexpect(forecastResponse.statusCode).to.equal(200);\n\nforecastResponseBody = JSON.parse(forecastResponse.body);\n     \nexpect(forecastResponseBody.data).to.be.an('array');",
+                "err": {},
+                "isRoot": false,
+                "uuid": "47e7fca7-960f-4eb1-b710-0fba06756b37",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "47e7fca7-960f-4eb1-b710-0fba06756b37"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 1530,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 30000
+          },
+          {
+            "uuid": "c1dd86b4-a756-4dfe-a6b0-f1f6c6e8854b",
+            "title": "Functional Tests",
+            "fullFile": "C:\\Users\\L119466\\Downloads\\Test\\JavaScriptApiAutomation\\specs\\Test_GetForecastWeather.js",
+            "file": "\\specs\\Test_GetForecastWeather.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "Verify response of 'Forecast Weather By Postal Code' Api have value of TIMESTAMP UTC",
+                "fullTitle": "Forecast Weather Data API - Test Suite Functional Tests Verify response of 'Forecast Weather By Postal Code' Api have value of TIMESTAMP UTC",
+                "timedOut": false,
+                "duration": 4587,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "testData = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly[2].Postal_Code+'&key='+data.ApiKey;\n\nconsole.log(\"Running Test for Forecast by Postal Code\"+testData);\nforecastResponse = await Get_ForecastByPostalCode(testData);\nexpect(forecastResponse.statusCode).to.equal(200);\n\nforecastResponseBody = JSON.parse(forecastResponse.body);\n\nfor(var i = 0; i < forecastResponseBody.data.length; i++) {\n    var dataObj = forecastResponseBody.data[i];\n\n    expect(dataObj).to.include.any.keys('timestamp_utc');\n    expect(dataObj.timestamp_utc).not.to.be.null;\n    // console.log(\"timestamp_utc = \"+dataObj.timestamp_utc);\n}",
+                "err": {},
+                "isRoot": false,
+                "uuid": "f9414fec-1964-44f6-b144-6f28b1490e0e",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "Verify response of 'Forecast Weather By Postal Code' Api have value of WEATHER",
+                "fullTitle": "Forecast Weather Data API - Test Suite Functional Tests Verify response of 'Forecast Weather By Postal Code' Api have value of WEATHER",
+                "timedOut": false,
+                "duration": 1353,
+                "state": "passed",
+                "speed": "slow",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "testData = data.BaseURL+'forecast/3hourly?postal_code='+data.Forecast3Hourly[2].Postal_Code+'&key='+data.ApiKey;\nconsole.log(\"Running Test for \"+testData);\n\nforecastResponse = await Get_ForecastByPostalCode(testData);\nexpect(forecastResponse.statusCode).to.equal(200);\n\nforecastResponseBody = JSON.parse(forecastResponse.body);\n\nfor(var i = 0; i < forecastResponseBody.data.length; i++) {\n    var dataObj = forecastResponseBody.data[i];\n\n    expect(dataObj.weather).to.include.any.keys('icon','code','description');\n    \n    expect(dataObj.weather).not.to.be.null;\n    expect(dataObj.weather.icon).not.to.be.null;\n    expect(dataObj.weather.code).not.to.be.null;\n    expect(dataObj.weather.description).not.to.be.null;\n    // console.log(\"weather = \"+dataObj.weather);\n}",
+                "err": {},
+                "isRoot": false,
+                "uuid": "b5c0e9a3-a164-4781-8946-4de41caa8147",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "f9414fec-1964-44f6-b144-6f28b1490e0e",
+              "b5c0e9a3-a164-4781-8946-4de41caa8147"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 5940,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 30000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 30000
       }
     ],
     "passes": [],

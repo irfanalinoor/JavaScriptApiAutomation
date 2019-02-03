@@ -11,7 +11,7 @@ this.timeout(500000);
 var expectedApiResponseTime = 4000;
 
 
-  it.only('Verify Response=OK when both APIs are called 10times', async function() {
+  it('Verify Response=OK when both APIs are called 10times', async function() {
 
     console.log("Expected Response Time per Api Request Call = "+expectedApiResponseTime);
           
