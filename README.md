@@ -23,12 +23,15 @@
 
 ## Test Scenarios
 
+    Performance Test Suite
+    √ Verify Response=OK when both APIs are called 10times (25031ms)
+    
     Current Weather Data API - Test Suite
     Basic Shakedown Tests
       √ Verify 'Current Weather By GPS Coordinates' Api response is OK (1227ms)
     Functional Tests
       √ Verify STATE CODE is displayed in response of 'Current Weather By GPS Coordinates' Api (870ms)   
-
+    
     Forecast Weather Data API - Test Suite
     Basic Shakedown Tests
       √ Verify 'Forecast - 3 Hourly Data' Api response is OK (1206ms)
@@ -38,3 +41,28 @@
 
 ## CI/CD Run
 - Change [InputData](https://github.com/irfanalinoor/JavaScriptApiAutomation/blob/master/resource/datafile/InputData.json) to run tests on CircleCI
+
+- CircleCI - Config.yml
+
+      version: 2
+      jobs:
+        build:
+          working_directory: ~/JavaScriptApiAutomation
+          docker:
+            - image: circleci/node:8.0
+            - image: mongo:3.4.4
+          steps:
+            - run:
+                name: "Checking NodeJs + NPM Version"
+                command: |
+                  node --version
+                  npm --version
+            - checkout
+            - restore_cache:
+                key: dependency-cache-{{ checksum "package.json" }}
+            - run:
+                name: Install-Mocha
+                command: 'sudo npm i -g mocha'
+            - run:
+                name: Run-Tests
+                command: 'npm test'
