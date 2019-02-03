@@ -6,6 +6,7 @@ const Get_ForecastByPostalCode = testData =>
         var options = {
             method: 'GET',
             uri: testData,
+            time:true,
             resolveWithFullResponse: true           
         };
 

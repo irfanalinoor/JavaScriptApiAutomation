@@ -6,9 +6,14 @@ const data = require('../resource/datafile/InputData.json');
 
 
 describe('Performance Test Suite', function() {
-this.timeout(30000);
+this.timeout(500000);
 
-  it('Verify Response=OK when both APIs are called 10times', async function() {
+var expectedApiResponseTime = 4000;
+
+
+  it.only('Verify Response=OK when both APIs are called 10times', async function() {
+
+    console.log("Expected Response Time per Api Request Call = "+expectedApiResponseTime);
           
     for(var i = 0; i < 10; i++) {
 
@@ -23,12 +28,18 @@ this.timeout(30000);
       forecastResponse = await Get_ForecastByPostalCode(testData2);
 
       expect(currentResponse.statusCode).to.equal(200);  
+
+      expect(currentResponse.elapsedTime).to.lessThan(expectedApiResponseTime);
       
       expect(forecastResponse.statusCode).to.equal(200);
 
-      console.log(">>> Response of \'Current Weather By GPS Coordinates\' Api = "+currentResponse.statusCode);
+      expect(forecastResponse.elapsedTime).to.lessThan(expectedApiResponseTime);
 
-      console.log(">>> Response of \'Forecast Weather By Postal Code\' Api = "+forecastResponse.statusCode);
+      console.log(">>> Response Code of \'Current Weather By GPS Coordinates\' Api = "+currentResponse.statusCode);
+      console.log(">>> Response Time of \'Current Weather By GPS Coordinates\' Api = "+currentResponse.elapsedTime);
+
+      console.log(">>> Response Time of \'Forecast Weather By Postal Code\' Api = "+forecastResponse.statusCode);
+      console.log(">>> Response Time of \'Forecast Weather By Postal Code\' Api = "+forecastResponse.elapsedTime);
 
     }
           
