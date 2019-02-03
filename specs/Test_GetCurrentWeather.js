@@ -32,7 +32,7 @@ this.timeout(30000);
 
         it('Verify STATE CODE is displayed in response of \'Current Weather By GPS Coordinates\' Api' , async function() {
 
-            testData = data.BaseURL+'current/?lat='+data.Current.Lat+'&lon='+data.Current.Lon+'&key='+data.ApiKey;
+            testData = data.BaseURL+'current/?lat='+data.Current[2].Lat+'&lon='+data.Current[2].Lon+'&key='+data.ApiKey;
 
             console.log("Running Test for Current Weather By GPS Coordinates "+testData);
             
