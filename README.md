@@ -1,5 +1,4 @@
-#JavaScript Api Automation Project
-
+# JavaScript Api Automation Project
 
 ## Overview
 * This is a simple project to showcase Api Test Automation in JavaScript.
@@ -12,7 +11,6 @@
 * **Assertion Lib:** Chai, Expect, Should
 * **CI/CD:** CircleCI
 
-----
 ## Setup
 - Download [JavaScriptApiAutomation](https://github.com/irfanalinoor/JavaScriptApiAutomation) project repo from GitHub
 - Install latest [Node.JS](https://nodejs.org/en/download/)
@@ -23,7 +21,6 @@
 - Run `npm install -g mocha`
 - Run Tests `npm test`
 
-----
 ## Test Scenarios
 
     Current Weather Data API - Test Suite
@@ -38,3 +35,6 @@
     Functional Tests
       √ Verify response of 'Forecast Weather By Postal Code' Api have value of TIMESTAMP UTC (1286ms)
       √ Verify response of 'Forecast Weather By Postal Code' Api have value of WEATHER (2055ms)
+
+## CI/CD Run
+- Change [InputData](https://github.com/irfanalinoor/JavaScriptApiAutomation/blob/master/resource/datafile/InputData.json) to run tests on CircleCI
