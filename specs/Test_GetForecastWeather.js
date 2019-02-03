@@ -49,6 +49,7 @@ this.timeout(30000);
             
                 expect(dataObj).to.include.any.keys('timestamp_utc');
 
+                expect(dataObj.timestamp_utc).not.to.be.null;
                 // console.log("timestamp_utc = "+dataObj.timestamp_utc);
 
             }
@@ -74,6 +75,13 @@ this.timeout(30000);
             
                 expect(dataObj.weather).to.include.any.keys('icon','code','description');
                 
+                expect(dataObj.weather).not.to.be.null;
+
+                expect(dataObj.weather.icon).not.to.be.null;
+
+                expect(dataObj.weather.code).not.to.be.null;
+
+                expect(dataObj.weather.description).not.to.be.null;
                 // console.log("weather = "+dataObj.weather);
             }
             

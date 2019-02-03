@@ -44,6 +44,7 @@ this.timeout(30000);
             
             expect(currentResponseBody.data[0]).to.include.any.keys( 'state_code');
             
+            expect(currentResponseBody.data[0].state_code).not.to.be.null;
 
         });
 
