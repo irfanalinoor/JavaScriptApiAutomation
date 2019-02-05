@@ -21,7 +21,7 @@
 - Run `npm install -g mocha`
 - Run Tests `npm test`
 
-## Test Scenarios
+## Test Scenarios - [Test Report Summary](http://htmlpreview.github.io/?https://github.com/irfanalinoor/JavaScriptApiAutomation/blob/master/mochawesome-report/mochawesome.html)
 
     Performance Test Suite
     √ Verify Response=OK when both APIs are called 10times (25031ms)
