@@ -1,7 +1,5 @@
 # JavaScript Api Automation Project
 
-[![CircleCI](https://circleci.com/gh/irfanalinoor/JavaScriptApiAutomation/tree/master.svg?style=svg)](https://circleci.com/gh/irfanalinoor/JavaScriptApiAutomation/tree/master)
-
 ## Overview
 * This is a simple project to showcase Api Test Automation in JavaScript.
 * Project uses free [Weather API](https://www.weatherbit.io/api/swaggerui/weather-api-v2#/)
