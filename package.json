@@ -4,7 +4,7 @@
   "description": "JavaScript Api Test Automation",
   "main": "index.js",
   "scripts": {
-    "test": "mocha specs/*.js --reporter mochawesome"
+    "test": "mocha specs/*.js"
   },
   "keywords": [
     "MOCHA",
